@@ -81,3 +81,37 @@ const renderContainer = specialoffersContainer => {
     });
 }
 renderContainer(specialoffersContainer);
+
+const reviewContainer = [
+    { 
+        Image: "assets/review-pic-1.png",
+        description1: "I quickly found the right tour for me, <br> but I had a few questions about the hotel, <br> I wrote to tech support and they answered all my questions within an hour.<br> The vacation itself was perfect.Thank you very much. I will come back again and again.",
+        description2: "<bold> Jannike Borg,</bold> Publisher",
+    },
+    { 
+        Image: "assets/review-pic-2.png",
+        description1: "I quickly found the right tour for me,<br> but I had a few questions about the hotel,<br> I wrote to tech support and they answered all my questions within an hour.<br> The vacation itself was perfect. Thank you very much. I will come back again and again.",
+        description2: "<bold> LeBron Durant,</bold> Flight attendant",
+    },
+    { 
+        Image: "assets/review-pic-3.png",
+        description1: "I quickly found the right tour for me,<br> but I had a few questions about the hotel,<br> I wrote to tech support and they answered all my questions within an hour.<br> The vacation itself was perfect. Thank you very much. I will come back again and again.",
+        description2: "<bold>Kaarel Piho,</bold> Chiropodist",
+    },
+
+];
+
+const renderReview = reviewContainer => {
+    const container = document.getElementById('reviewContainer');
+    reviewContainer.forEach(reviewContainer => {
+        container.innerHTML += `
+          <div class="first-review">
+                    <img src="${reviewContainer.Image}" alt="" id="first-review-pic">
+                        <p>${reviewContainer.description1}</p>
+                       <p class="first-review-author"> ${reviewContainer.description2}</p>
+                </div>
+        `;
+    });
+}
+
+renderReview(reviewContainer);

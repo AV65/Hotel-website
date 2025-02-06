@@ -74,6 +74,9 @@
     width: 30px;
     margin-left: 255px;
  }
+ h2 {
+    text-align: center;
+ }
 h3 {
     font-size: 70x;
 }
@@ -116,15 +119,10 @@ span {
     text-align: center;
     font-size: 30px;
 }
-.first-review{
-    text-align: center;
- }
- .first-review-author,.second-review-author {
+ .first-review-author,.second-review-author,#third-review-author {
     font-style: italic;
  }
- .second-review{
-    text-align: center;
- }
+ 
  .review-button {
     background-color: rgb(238, 104, 95, 100);
     color: #FFFFFF;
@@ -192,8 +190,8 @@ span {
     display: flex;
     gap: 10px;
 }
-.review {
+#reviewContainer {
     display: flex;
     flex-direction: column;
-    float: left;
+    text-align: center;
 }
