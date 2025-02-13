@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const closeMenu = document.getElementById('closeMenu');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu && closeMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    }
+});
+
+
+
 const chooseusContainer = [
     { 
         Image: "assets/payment-pic.png",
@@ -115,3 +133,45 @@ const renderReview = reviewContainer => {
 }
 
 renderReview(reviewContainer);
+
+const postContainer = [
+    { 
+        image1: "assets/athens.png",
+        description1: "May 23, 2022",
+        image2: "assets/time-5minutes.png",
+        title: "My trip to Athens",
+        description2: "It would seem that in a city where Theseus,<br> Plato and Epicurus once walked,<br> the very idea of the subway is alien to the city, but already...",
+    },
+    { 
+        image1: "assets/vilnius.png",
+        description1: "May 22, 2022",
+        image2: "assets/time-1minute.png",
+        title: "Vilnius resorts",
+        description2: "I haven't seen any resorts in Vilnius,<br>but there are wonderful people and pubs",
+    },
+    { 
+        image1: "assets/plane.png",
+        description1: "May 22, 2022",
+        image2: "assets/time-15minutes.png",
+        title: "Tips for flying on a plane",
+        description2: "If you have a fear of flying,<br> here's a helpful tip:<br> bring your co-pilot so you can take a nap while he steers the plane for you",
+    },
+
+];
+
+const renderPost = postContainer => {
+    const container = document.getElementById('postContainer');
+    postContainer.forEach(postContainer => {
+        container.innerHTML += `
+               <div class="trip-to-athens">
+                       <img src="${postContainer.image1}" alt="" class="athens-pic">
+                        <p>${postContainer.description1}</p> 
+                        <img src="${postContainer.image2}" alt="" class="five-minutes">
+                        <h4 class="trip-to-athens">${postContainer.title}</h4>
+                        <p class="athens-paragraph">${postContainer.description2}</p>
+                </div>
+        `;
+    });
+}
+
+renderPost(postContainer);
